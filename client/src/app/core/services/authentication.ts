@@ -55,7 +55,12 @@ export class AuthenticationService {
       const user = await firstValueFrom(this.http.get<User>(`${this.url}/me`));
       this.currentUser.set(user);
     } catch {
-      this.currentUser.set(null);
+      this.clear();
     }
+  }
+
+
+  clear(): void {
+    this.currentUser.set(null);
   }
 }

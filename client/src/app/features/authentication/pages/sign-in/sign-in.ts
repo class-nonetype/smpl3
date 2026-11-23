@@ -5,8 +5,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { Router, RouterLink } from '@angular/router';
+import { PasswordField } from '../../components/password-field/password-field';
 
 @Component({
   imports: [
@@ -16,7 +16,7 @@ import { Router, RouterLink } from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule,
+    PasswordField,
   ],
   selector: 'sign-in-page',
   styleUrl: './sign-in.scss',
@@ -25,9 +25,6 @@ import { Router, RouterLink } from '@angular/router';
 export class SignInPage {
   private readonly authenticationService = inject(AuthenticationService);
   private readonly router = inject(Router);
-
-  protected readonly hidePassword = signal(true);
-
 
   private readonly credentials = signal<SignInRequest>({ email: '', password: '' });
 

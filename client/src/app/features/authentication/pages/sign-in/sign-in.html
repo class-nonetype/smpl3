@@ -9,27 +9,7 @@
     }
   </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Contraseña</mat-label>
-    <input
-      matInput
-      autocomplete="current-password"
-      [type]="hidePassword() ? 'password' : 'text'"
-      [formField]="signInForm.password"
-    />
-    <button
-      matIconButton
-      matSuffix
-      type="button"
-      [attr.aria-label]="hidePassword() ? 'Mostrar contraseña' : 'Ocultar contraseña'"
-      (click)="hidePassword.update((hidden) => !hidden)"
-    >
-      <mat-icon>{{ hidePassword() ? 'visibility' : 'visibility_off' }}</mat-icon>
-    </button>
-    @if (signInForm.password().errors()[0]; as error) {
-      <mat-error>{{ error.message }}</mat-error>
-    }
-  </mat-form-field>
+  <password-field [field]="signInForm.password" autocomplete="current-password" />
 
   @if (signInForm().errors()[0]; as error) {
     <p class="form-error" role="alert">{{ error.message }}</p>

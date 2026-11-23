@@ -15,7 +15,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { PasswordField } from '../../components/password-field/password-field';
 
 @Component({
   imports: [
@@ -25,7 +25,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule,
+    PasswordField,
   ],
   selector: 'sign-up-page',
   styleUrl: './sign-up.scss',
@@ -34,8 +34,6 @@ import { MatIconModule } from '@angular/material/icon';
 export class SignUpPage {
   private readonly authenticationService = inject(AuthenticationService);
   private readonly router = inject(Router);
-
-  protected readonly hidePassword = signal(true);
 
   private readonly account = signal<SignUpRequest>({
     email: '',

@@ -17,28 +17,7 @@
     }
   </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Contraseña</mat-label>
-    <input
-      matInput
-      autocomplete="new-password"
-      [type]="hidePassword() ? 'password' : 'text'"
-      [formField]="signUpForm.password"
-    />
-    <button
-      matIconButton
-      matSuffix
-      type="button"
-      [attr.aria-label]="hidePassword() ? 'Mostrar contraseña' : 'Ocultar contraseña'"
-      (click)="hidePassword.update((hidden) => !hidden)"
-    >
-      <mat-icon>{{ hidePassword() ? 'visibility' : 'visibility_off' }}</mat-icon>
-    </button>
-    <mat-hint>Entre 8 y 72 caracteres</mat-hint>
-    @if (signUpForm.password().errors()[0]; as error) {
-      <mat-error>{{ error.message }}</mat-error>
-    }
-  </mat-form-field>
+  <password-field [field]="signUpForm.password" autocomplete="new-password" hint="Entre 8 y 72 caracteres" />
 
   @if (signUpForm().errors()[0]; as error) {
     <p class="form-error" role="alert">{{ error.message }}</p>

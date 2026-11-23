@@ -3,11 +3,15 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { AuthenticationService } from './core/services/authentication';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { authenticationInterceptor } from './core/interceptors/authentication';
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
+    provideHttpClient(withInterceptors([authenticationInterceptor])),
 
     /*
     ejecuta la función antes de renderizar la app, y si devuelve una promesa
