@@ -1,0 +1,67 @@
+# ── General ──────────────────────────────────────────────
+.claude/
+CLAUDE.local.md
+
+# Secretos / variables de entorno
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs
+*.log
+logs/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores / IDEs
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# ── Client (Angular) ─────────────────────────────────────
+client/node_modules/
+client/dist/
+client/out-tsc/
+client/tmp/
+client/bazel-out/
+client/.angular/
+client/coverage/
+client/.sass-cache/
+client/connect.lock
+client/libpeerconnection.log
+client/testem.log
+client/typings/
+client/__screenshots__/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ── Server (Go) ──────────────────────────────────────────
+server/bin/
+server/build/
+server/tmp/
+server/vendor/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+coverage.txt
+go.work
+go.work.sum
+
+# Uploads locales (archivos subidos por usuarios en desarrollo)
+server/uploads/

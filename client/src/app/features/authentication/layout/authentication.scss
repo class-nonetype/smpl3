@@ -1,0 +1,26 @@
+// propio elemento de <authentication-layout>
+// por defecto es inline y no ocupa alto
+// asi que hay que hacerlo block con height: 100% paraa
+// que el centrado vertical funcione
+:host {
+  display: block;
+  height: 100%;
+}
+
+.page {
+  // forma mas corta de centrar en los dos ejes
+  display: grid;
+  place-items: center;
+
+  height: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.container {
+  // en el cleular ocupa todo el ancho y
+  // en el escritorio no se estira
+  // el padding de .page deja margen a los lados en pantallas chicas
+  width: 100%;
+  max-width: 360px;
+}

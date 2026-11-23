@@ -1,0 +1,10 @@
+<main class="page">
+  @if (user(); as user) {
+    <h1>Hola, {{ user.username }}</h1>
+    <p>{{ user.email }}</p>
+  }
+
+  <button matButton="outlined" type="button" [disabled]="signingOut()" (click)="signOut()">
+    {{ signingOut() ? 'Cerrando sesión…' : 'Cerrar sesión' }}
+  </button>
+</main>
